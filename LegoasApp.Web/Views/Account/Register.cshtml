@@ -1,0 +1,55 @@
+﻿@model AccountRegisterInputViewModel
+@{
+    ViewData["Title"] = "Account Register";
+}
+
+<div class="row text">
+    <div class="col-md-9 offset-md-1">
+        <p>
+            <h1>@ViewData["Title"]</h1>
+        </p>
+
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <form asp-action="Register" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="AccountName" class="form-control" id="AccountName" placeholder="Your Account Name" />
+                        <label for="AccountName">Account Name</label>
+                        <span asp-validation-for="AccountName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Password" class="form-control" id="Password" placeholder="123" type="password" />
+                        <label for="Password">Password</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="UserName" class="form-control" id="UserName" placeholder="123" />
+                        <label for="UserName">Username</label>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Address" class="form-control" id="Address" placeholder="123" />
+                        <label for="Address">Address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="PostalCode" class="form-control" id="PostalCode" placeholder="123" />
+                        <label for="PostalCode">PostalCode</label>
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Province" class="form-control" id="Province" placeholder="123" />
+                        <label for="Province">Province</label>
+                        <span asp-validation-for="Province" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Register" class="btn btn-primary float-end" />
+                        <a class="btn btn-outline-secondary" asp-controller="Account" asp-action="Index">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

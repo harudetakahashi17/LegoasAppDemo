@@ -18,9 +18,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LegoasApp.Core\LegoasApp.Core.csproj" />
-    <ProjectReference Include="..\LegoasApp.SharedKernel\LegoasApp.SharedKernel.csproj" />
-  </ItemGroup>
-
 </Project>

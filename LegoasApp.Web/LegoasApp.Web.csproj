@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LegoasApp.Infrastructure\LegoasApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\LegoasApp.Core\LegoasApp.Core.csproj" />
   </ItemGroup>
 
 </Project>

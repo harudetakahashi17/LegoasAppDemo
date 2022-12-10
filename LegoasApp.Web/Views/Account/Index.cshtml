@@ -1,0 +1,41 @@
+﻿@model AccountInputViewModel
+@{
+    ViewData["Title"] = "Account Login";
+}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <center>
+            <h1>@ViewData["Title"]</h1>
+        </center>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form asp-action="Index" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger">@ViewBag.AccountMsg</div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="AccountName" class="form-control" id="AccountName" placeholder="Your Account Name" />
+                        <label for="AccountName">Account Name</label>
+                        <span asp-validation-for="AccountName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Password" class="form-control" id="Password" placeholder="123" type="password" />
+                        <label for="Password">Password</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Login" class="btn btn-primary float-end" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p>Don't have an account yet? <a asp-action="Register" class="link-primary">Click Here!</a></p>
+                <p>Forgot your password? <a asp-action="ForgotPassword" class="link-primary">Yes, I forgot</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
