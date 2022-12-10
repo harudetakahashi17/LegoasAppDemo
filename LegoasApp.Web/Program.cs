@@ -1,11 +1,19 @@
-using LegoasApp.Web.Models;
+using LegoasApp.Core.Interfaces;
+using LegoasApp.Core.Services;
+using LegoasApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var constring = builder.Configuration.GetConnectionString("LegoasAppDB");
+string constring = builder.Configuration.GetConnectionString("LegoasAppDB");
 builder.Services.AddDbContext<LegoasAppContext>(opt => opt.UseSqlServer(constring));
+
+
+// Add Service interface
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddSession();
 
 builder.Services.AddControllersWithViews();
 
@@ -21,6 +29,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 
 app.UseRouting();
 

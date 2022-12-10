@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoasApp.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoasApp.Core", "LegoasApp.Core\LegoasApp.Core.csproj", "{A245152D-3E63-48AB-8711-EED8F10255F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoasApp.SharedKernel", "LegoasApp.SharedKernel\LegoasApp.SharedKernel.csproj", "{ADC51A67-3B23-4FC1-806A-662E3AB35F9B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{A245152D-3E63-48AB-8711-EED8F10255F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A245152D-3E63-48AB-8711-EED8F10255F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A245152D-3E63-48AB-8711-EED8F10255F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADC51A67-3B23-4FC1-806A-662E3AB35F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADC51A67-3B23-4FC1-806A-662E3AB35F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADC51A67-3B23-4FC1-806A-662E3AB35F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADC51A67-3B23-4FC1-806A-662E3AB35F9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

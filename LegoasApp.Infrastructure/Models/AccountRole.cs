@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LegoasApp.Web.Models
+namespace LegoasApp.Infrastructure.Models
 {
     public partial class AccountRole
     {

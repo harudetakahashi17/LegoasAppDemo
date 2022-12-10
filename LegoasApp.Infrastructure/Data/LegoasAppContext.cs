@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using LegoasApp.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 
-namespace LegoasApp.Web.Models
+namespace LegoasApp.Infrastructure.Data
 {
     public partial class LegoasAppContext : DbContext
     {
@@ -15,9 +16,10 @@ namespace LegoasApp.Web.Models
             _configuration = config;
         }
 
-        public LegoasAppContext(DbContextOptions<LegoasAppContext> options)
+        public LegoasAppContext(DbContextOptions<LegoasAppContext> options, IConfiguration config)
             : base(options)
         {
+            _configuration = config;
         }
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
