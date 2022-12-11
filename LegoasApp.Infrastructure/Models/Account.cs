@@ -8,6 +8,7 @@ namespace LegoasApp.Infrastructure.Models
         public Account()
         {
             AccountRoles = new HashSet<AccountRole>();
+            Users = new HashSet<User>();
         }
 
         public int Id { get; set; }
@@ -20,5 +21,6 @@ namespace LegoasApp.Infrastructure.Models
         public bool RowStatus { get; set; }
 
         public virtual ICollection<AccountRole> AccountRoles { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

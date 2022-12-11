@@ -1,0 +1,40 @@
+﻿@model AccountSettingViewModel
+@{
+    ViewData["Title"] = "Account Role Settings";
+}
+
+<div class="row text">
+    <div class="col-md-9 offset-md-1">
+        <p>
+            <h1>@ViewData["Title"]</h1>
+        </p>
+        <center><p class="text-danger">@ViewBag.AccSetErrMsg</p></center>
+        <center><p class="text-success">@ViewBag.AccSetMsg</p></center>
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <form asp-action="AccountRoleMenuSetting" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <input type="hidden" asp-for="AccountId" value="@Model.AccountId" />
+                    <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" for="Roles">Roles</span>
+                        <select asp-for="Roles" id="Roles" class="form-select" asp-items="Model.RoleList" multiple aria-label="multiple select"></select>
+                        <span asp-validation-for="Roles" class="text-danger"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" for="MenuAccess">MenuAccess</span>
+                        <select asp-for="MenuAccess" id="MenuAccess" class="form-select" asp-items="Model.MenuAccessList" multiple aria-label="multiple select"></select>
+                        <span asp-validation-for="MenuAccess" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Save" class="btn btn-primary float-end" />
+                        <a class="btn btn-outline-secondary" asp-controller="Account" asp-action="Index">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

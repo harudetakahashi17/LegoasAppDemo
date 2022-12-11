@@ -22,26 +22,35 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                    </ul>
-                    @if (ViewBag.AccountId == 0 || ViewBag.AccountId == null)
-                    {
-                        <button class="btn btn-outline-primary">
+                        <li>
+                        @if (ViewBag.AccountId == 0 || ViewBag.AccountId == null)
+                        {
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">Login</a>
-                        </button>
-                    }
-                    else
-                    {
-                        <div class="dropdown">
-                            <a class="dropdown-toggle text-dark" href="#" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                                Hi, @ViewBag.AccountName
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                                <li>
-                                    <a class="dropdown-item text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    }
+                        }
+                        else
+                        {
+                            <div class="nav-link dropdown">
+                                <a class="dropdown-toggle text-dark" href="#" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                    Hi, @ViewBag.AccountName
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                        <li>
+                                            <a class="dropdown-item text-dark" asp-area="" asp-controller="Account" asp-action="AccountList">Account List</a>
+                                        </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" asp-area="" asp-controller="Account" asp-action="AccountUserBranchSetting">User Setting</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" asp-area="" asp-controller="Account" asp-action="AccountRoleMenuSetting">Role Setting</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

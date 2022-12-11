@@ -14,9 +14,9 @@ namespace LegoasApp.Core.Services
     public class MenuScreenService : IMenuScreenService
     {
         private LegoasAppContext _context;
-        private ILogger<AccountService> _logger;
+        private ILogger<MenuScreenService> _logger;
 
-        public MenuScreenService(LegoasAppContext context, ILogger<AccountService> logger)
+        public MenuScreenService(LegoasAppContext context, ILogger<MenuScreenService> logger)
         {
             _context = context;
             _logger = logger;
@@ -34,7 +34,7 @@ namespace LegoasApp.Core.Services
                 }
 
                 _context.MenuScreens.Add(menu);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch(Exception ex)
             {

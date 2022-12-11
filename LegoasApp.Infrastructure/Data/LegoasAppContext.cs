@@ -4,7 +4,6 @@ using LegoasApp.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Protocols;
 
 namespace LegoasApp.Infrastructure.Data
 {
@@ -248,6 +247,12 @@ namespace LegoasApp.Infrastructure.Data
                 entity.Property(e => e.UserName)
                     .HasMaxLength(255)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_User_Account");
             });
 
             modelBuilder.Entity<UserBranch>(entity =>
