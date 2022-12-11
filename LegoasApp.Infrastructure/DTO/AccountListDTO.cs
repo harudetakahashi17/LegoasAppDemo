@@ -1,6 +1,12 @@
-﻿namespace LegoasApp.Web.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LegoasApp.Infrastructure.DTO
 {
-    public class AccountViewModel
+    public class AccountListDTO
     {
         public int Id { get; set; }
         public string AccountName { get; set; }

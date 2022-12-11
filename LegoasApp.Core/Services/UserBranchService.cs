@@ -58,7 +58,7 @@ namespace LegoasApp.Core.Services
                 _context.UserBranches.RemoveRange(tobeDeleted);
 
                 _context.UserBranches.AddRange(userBranches);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

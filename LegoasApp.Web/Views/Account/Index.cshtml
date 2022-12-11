@@ -23,7 +23,7 @@
                         <label for="Password">Password</label>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-
+                    <span class="text-danger">@ViewBag.AccountMsg</span>
                     <div>
                         <input type="submit" value="Login" class="btn btn-primary float-end" />
                     </div>

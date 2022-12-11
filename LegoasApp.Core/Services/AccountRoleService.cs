@@ -96,7 +96,7 @@ namespace LegoasApp.Core.Services
                 _context.AccountRoles.RemoveRange(tobeDeleted);
 
                 _context.AccountRoles.AddRange(accountRoles);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

@@ -58,7 +58,7 @@ namespace LegoasApp.Core.Services
                 _context.RoleMenus.RemoveRange(tobeDeleted);
 
                 _context.AddRange(roleMenus);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

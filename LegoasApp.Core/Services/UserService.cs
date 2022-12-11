@@ -93,9 +93,10 @@ namespace LegoasApp.Core.Services
                 usac.Address = user.Address;
                 usac.BranchName = user.BranchName;
                 usac.PostalCode = user.PostalCode;
+                usac.Province = user.Province;
 
                 _context.Users.Update(usac);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 return usac;
             }

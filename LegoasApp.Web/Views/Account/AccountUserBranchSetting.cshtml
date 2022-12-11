@@ -1,6 +1,6 @@
-﻿@model AccountRegisterInputViewModel
+﻿@model AccountSettingViewModel
 @{
-    ViewData["Title"] = "Account Register";
+    ViewData["Title"] = "Account User Settings";
 }
 
 <div class="row text">
@@ -8,11 +8,15 @@
         <p>
             <h1>@ViewData["Title"]</h1>
         </p>
-        <center><p class="text-danger">@ViewBag.RegErrMsg</p></center>
+        <center><p class="text-danger">@ViewBag.AccSetErrMsg</p></center>
+        <center><p class="text-success">@ViewBag.AccSetMsg</p></center>
         <div class="row">
             <div class="col-md-9 offset-md-1">
-                <form asp-action="Register" method="post">
+                <form asp-action="AccountUserBranchSetting" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <input type="hidden" asp-for="AccountId" value="@Model.AccountId" />
+                    <input type="hidden" asp-for="UserId" value="@Model.UserId" />
 
                     <div class="form-floating mb-3">
                         <input asp-for="AccountName" class="form-control" id="AccountName" placeholder="Your Account Name" />
@@ -45,23 +49,13 @@
                         <span asp-validation-for="Province" class="text-danger"></span>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" for="Roles">Roles</span>
-                        <select asp-for="Roles" id="Roles" class="form-select" asp-items="Model.RoleList" multiple aria-label="multiple select"></select>
-                        <span asp-validation-for="Roles" class="text-danger"></span>
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" for="MenuAccess">MenuAccess</span>
-                        <select asp-for="MenuAccess" id="MenuAccess" class="form-select" asp-items="Model.MenuAccessList" multiple aria-label="multiple select"></select>
-                        <span asp-validation-for="MenuAccess" class="text-danger"></span>
-                    </div>
-                    <div class="input-group mb-3">
                         <span class="input-group-text" for="Branches">Branches</span>
                         <select asp-for="Branches" id="Branches" class="form-select" asp-items="Model.BranchList" multiple aria-label="multiple select"></select>
                         <span asp-validation-for="Branches" class="text-danger"></span>
                     </div>
 
                     <div>
-                        <input type="submit" value="Register" class="btn btn-primary float-end" />
+                        <input type="submit" value="Save" class="btn btn-primary float-end" />
                         <a class="btn btn-outline-secondary" asp-controller="Account" asp-action="Index">Back</a>
                     </div>
                 </form>
