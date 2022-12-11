@@ -11,7 +11,7 @@ namespace LegoasApp.Core.Interfaces
     {
         Task<IEnumerable<Account>> GetAll();
         Account GetById(int id);
-        void Add(Account account);
+        Account Add(Account account);
         Account Update(int id, Account account);
         void Delete(int id, string userLogin);
         Task<Account> Login(string accountName, string password);

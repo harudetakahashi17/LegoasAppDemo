@@ -23,7 +23,7 @@ namespace LegoasApp.Core.Services
             _logger = logger;
         }
 
-        public void Add(Account account)
+        public Account Add(Account account)
         {
             try
             {
@@ -32,12 +32,15 @@ namespace LegoasApp.Core.Services
                 {
                     throw new Exception("Account name already exist");
                 }
-                _context.Add(account);
-                _context.SaveChangesAsync();
+                _context.Accounts.Add(account);
+                _context.SaveChanges();
+
+                return account;
             }
             catch(Exception e)
             {
                 _logger.LogError(e, "Failed to save data");
+                return null;
             }
         }
 

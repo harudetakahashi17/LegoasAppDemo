@@ -1,6 +1,7 @@
 ﻿@model AccountRegisterInputViewModel
 @{
     ViewData["Title"] = "Account Register";
+    var counter = 0;
 }
 
 <div class="row text">
@@ -32,6 +33,7 @@
                     <div class="form-floating mb-3">
                         <input asp-for="Address" class="form-control" id="Address" placeholder="123" />
                         <label for="Address">Address</label>
+                        <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3">
                         <input asp-for="PostalCode" class="form-control" id="PostalCode" placeholder="123" />
@@ -42,6 +44,21 @@
                         <input asp-for="Province" class="form-control" id="Province" placeholder="123" />
                         <label for="Province">Province</label>
                         <span asp-validation-for="Province" class="text-danger"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" for="Roles">Roles</span>
+                        <select asp-for="Roles" id="Roles" class="form-select" asp-items="Model.RoleList" multiple aria-label="multiple select"></select>
+                        <span asp-validation-for="Roles" class="text-danger"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" for="MenuAccess">MenuAccess</span>
+                        <select asp-for="MenuAccess" id="MenuAccess" class="form-select" asp-items="Model.MenuAccessList" multiple aria-label="multiple select"></select>
+                        <span asp-validation-for="MenuAccess" class="text-danger"></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" for="Branches">Branches</span>
+                        <select asp-for="Branches" id="Branches" class="form-select" asp-items="Model.BranchList" multiple aria-label="multiple select"></select>
+                        <span asp-validation-for="Branches" class="text-danger"></span>
                     </div>
 
                     <div>

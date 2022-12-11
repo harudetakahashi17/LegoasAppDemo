@@ -11,6 +11,7 @@ namespace LegoasApp.Infrastructure.Models
         }
 
         public int Id { get; set; }
+        public int AccountId { get; set; }
         public string UserName { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string PostalCode { get; set; } = null!;
@@ -22,6 +23,7 @@ namespace LegoasApp.Infrastructure.Models
         public string? ModifiedBy { get; set; }
         public bool RowStatus { get; set; }
 
+        public virtual Account Account { get; set; } = null!;
         public virtual ICollection<UserBranch> UserBranches { get; set; }
     }
 }

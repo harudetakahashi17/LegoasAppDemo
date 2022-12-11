@@ -14,9 +14,9 @@ namespace LegoasApp.Core.Services
     public class RoleService : IRoleService
     {
         private LegoasAppContext _context;
-        private ILogger<AccountService> _logger;
+        private ILogger<RoleService> _logger;
 
-        public RoleService(LegoasAppContext context, ILogger<AccountService> logger)
+        public RoleService(LegoasAppContext context, ILogger<RoleService> logger)
         {
             _context = context;
             _logger = logger;
@@ -33,7 +33,7 @@ namespace LegoasApp.Core.Services
                 }
 
                 _context.Roles.Add(role);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch(Exception ex)
             {

@@ -15,9 +15,9 @@ namespace LegoasApp.Core.Services
     public class BranchService : IBranchService
     {
         private LegoasAppContext _context;
-        private ILogger<AccountService> _logger;
+        private ILogger<BranchService> _logger;
 
-        public BranchService(LegoasAppContext context, ILogger<AccountService> logger)
+        public BranchService(LegoasAppContext context, ILogger<BranchService> logger)
         {
             _context = context;
             _logger = logger;
@@ -35,7 +35,7 @@ namespace LegoasApp.Core.Services
                 }
 
                 _context.Branches.Add(branch);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch(Exception ex)
             {

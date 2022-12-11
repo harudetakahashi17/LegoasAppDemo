@@ -13,6 +13,14 @@ builder.Services.AddDbContext<LegoasAppContext>(opt => opt.UseSqlServer(constrin
 
 // Add Service interface
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAccountRoleService, AccountRoleService>();
+builder.Services.AddScoped<IBranchService, BranchService>();
+builder.Services.AddScoped<IMenuScreenService, MenuScreenService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IRoleMenuService, RoleMenuService>();
+builder.Services.AddScoped<IUserBranchService, UserBranchService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 builder.Services.AddSession();
 
 builder.Services.AddControllersWithViews();
